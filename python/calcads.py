@@ -16,18 +16,18 @@ def cadastro(v_cont):
     dict_item['marca']      = input('marca: ')
     dict_item['valor']      = float (input('valor: '))
 
-    print('qual linha: 1 - Infantil | 2 - Masculino |3 - Feminino')
-    lina = input('DIGITA: ')
+    print('qual linha: 1 - Infantil | 2 - Feminino | 3 - Masculino ')
+    lina = int(input('DIGITA: '))
     tamanho = dict()
     if lina == 1:
         dict_item['linha']      = 'Infantil'
-        print(VETOR_infantil)
+        print(f'Tamanho para linha: {VETOR_infantil}')
     elif lina == 2:
-        dict_item['linha']      = 'Masculino'
-        print(VETOR_infantil)
-    else:
         dict_item['linha']      = 'Feminino'
-        print(VETOR_infantil)
+        print(f'Tamanho para linha: {VETOR_femino}')
+    else:
+        dict_item['linha']      = 'Masculino'
+        print(f'Tamanho para linha: {VETOR_msculino}')
 
     v_tamanho               = int(input('digita numeração: '))
     tamanho[v_tamanho]      = int (input('quandidade: '))
@@ -76,13 +76,18 @@ def alterar():
     cod = int(input('Digite o código do produto que deseja alterar: '))
     for i in range(len(item)):
         if cod == item[i]['codigo']:
+            print(f'Tamanho para linha: {item[i]['linha']}')
+            if item[i]['linha'] == 'Infantil':
+                    print(VETOR_infantil)
+            elif item[i]['linha'] == 'Feminino':
+                    print(VETOR_femino)
+            else:
+                    print(VETOR_msculino)
             tam = int(input('Digite o tamanho que deseja adicionar: '))
             quant = int(input('Digite a quantidade desse tamanho: '))
             if tam in item[i]['tamanho']:
-                print(item[i]['linha'])
                 item[i]['tamanho'][tam] += quant
-            else:
-                print(item[i]['linha'])
+            else:                
                 item[i]['tamanho'][tam] = quant
             print('Alteração realizada com sucesso!')
             break
@@ -111,6 +116,3 @@ while(menu == True):
         menu = False
     else:
         print('OPÇÃO INVALIDA!!')
-
-
-
