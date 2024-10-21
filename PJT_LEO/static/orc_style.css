@@ -107,7 +107,7 @@ form{
 }
 
 .radio-img {
-    width: 300px; /* Tamanho das imagens */
+    width: 260px; /* Tamanho das imagens */
     height: auto;
     border-radius: 8px; /* Deixar as bordas arredondadas, se quiser */
     transition: transform 0.3s ease; /* Animação ao passar o mouse */
