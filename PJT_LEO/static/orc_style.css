@@ -87,7 +87,7 @@ form{
 }
 
 .bt_consultar:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo ao passar o mouse */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .radio-group {
@@ -99,26 +99,26 @@ form{
 
 .radio-group input[type="radio"],
 .radio-group input[type="checkbox"]{
-    display: none; /* Esconde o radio button original */
+    display: none; 
 }
 
 .radio-group label {
-    cursor: pointer; /* Aumenta a interatividade */
+    cursor: pointer; 
 }
 
 .radio-img {
-    width: 260px; /* Tamanho das imagens */
+    width: 260px;
     height: auto;
-    border-radius: 8px; /* Deixar as bordas arredondadas, se quiser */
-    transition: transform 0.3s ease; /* Animação ao passar o mouse */
+    border-radius: 8px;
+    transition: transform 0.3s ease; 
 }
 
 .radio-group input[type="radio"]:checked + label .radio-img,
 .radio-group input[type="checkbox"]:checked + label .radio-img {
-    border: 2px solid #5454e6; /* Adiciona borda quando selecionado */
+    border: 2px solid #5454e6;
 }
 .radio-group label:hover .radio-img {
-    transform: scale(1.05); /* Animação ao passar o mouse sobre a imagem */
+    transform: scale(1.05);
 }
 
 .rodape {
