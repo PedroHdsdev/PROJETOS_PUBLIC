@@ -6,7 +6,7 @@
     <title>ORÇAMENTO ONLINE</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='orc_style.css') }}">
-    <script src='main.js'></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script> 
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
         </a>
     </header>
     <div class="main">
-        <form class="form" action="/orcamento" method="POST" id="consultaForm">
+        <form class="form" action="/orcamento" method="POST">
             <label for="Tipo_casa" style="font-size: 26px; margin: 1px;">"Compartilhe conosco suas necessidades e expectativas para seu novo lar, assim 
                 podemos personalizar o orçamento conforme suas necessidades."</label><br><br>
             

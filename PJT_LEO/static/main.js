@@ -10,7 +10,7 @@ function redirectToIndex() {
 // Adiciona eventos de clique aos botões assim que o DOM estiver completamente carregado
 document.addEventListener('DOMContentLoaded', function() {
     var orcamento_btn = document.getElementById('orcamento-btn');
-    var consultaForm = document.getElementById('consultaForm');
+    var resutado_btn = document.getElementById('resutado-btn');
 
     if (orcamento_btn) {
         orcamento_btn.addEventListener('click', redirectToOrcamento);
@@ -22,9 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
             clearForm();
         });
     }
-});
-document.querySelector('form').addEventListener('submit', function(event) {
-    console.log('Formulário enviado');
 });
 
 

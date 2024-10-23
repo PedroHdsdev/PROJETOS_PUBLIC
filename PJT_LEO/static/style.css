@@ -135,6 +135,7 @@ a:hover {
 }
 .rodape_left, .rodape_right {
     width: 48%; 
+    height: 15%;
     margin-left: 30px;
     margin-bottom: 10px;
     box-sizing: border-box;
