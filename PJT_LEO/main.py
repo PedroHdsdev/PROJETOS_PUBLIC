@@ -32,12 +32,17 @@ def orcamento():
             vl_total, goumet, hometheater, despejo, escritorio, academia, piscina = get_list_valortotal(vl_area, list_ambientes)
             print(vl_total, list_ambientes, goumet, hometheater, despejo, escritorio, academia, piscina)
 #            try:
-#                  query = sql.SQL("INSERT INTO orcamento (orc_tipo, orc_ambiente, orc_quartos,\
+#                  query1 = sql.SQL("INSERT INTO orcamento (orc_tipo, orc_ambiente, orc_quartos,\
 #                                    orc_garagem, orc_goumet, orc_hometheater, orc_despejo, orc_escritorio,\
 #                                    orc_academia, orc_piscina) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)")
+#                 
+#                  query2 = sql.SQL("INSERT INTO restado (res_area, res_vlmetro, res_total)\
+#                                   VALUES (%s,%s,%s)") 
+#
 #                  conn = connect_db()
 #                  cur = conn.cursor()
-#                  cur.execute(query, (tipo, ambiente,quartos,garagem,goumet,hometheater,despejo,escritorio,academia,piscina))
+#                  cur.execute(query1, (tipo, ambiente,quartos,garagem,goumet,hometheater,despejo,escritorio,academia,piscina))
+#                  cur.execute(query2, (vl_area,35.00,vl_total)
 #                  conn.commit()
 #                  cur.close()
 #                  conn.close()

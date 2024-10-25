@@ -16,11 +16,11 @@
         </a>
     </header>
     <div class="main">
-        <form class="form" action="/orcamento" method="POST">
+        <form action="/orcamento" method="POST">
             <label for="title_form" style="font-size: 26px; margin: 1px;">"Compartilhe conosco suas necessidades e expectativas para seu novo lar, assim 
                 podemos personalizar o orçamento conforme suas necessidades."</label><br><br>
             
-                <hr class="divisao_linha">
+            <hr class="divisao_linha">
             <label for="Tipo_casa" style="font-size: 25px; margin: 5px;">Tipo de casa ?</label><br><br>
             <div class="radio-group">
                 <input type="radio" id="r_terrio" name="G01" value="Térreo" required>
@@ -93,7 +93,7 @@
             
                 <hr class="divisao_linha">
                 <label for="Ambientes_desejados" style="font-size: 20px;">Marque outros ambientes desejados:</label><br><br>
-                    <div class="radio-group" style="margin-left: 10%;">
+                    <div class="radio-group">
                         <input type="checkbox" id="r_area_goumet" name="G05[]" value="area_goumet">
                         <label for="r_area_goumet">
                             <img src="{{ url_for('static', filename='imagens/img_area_goumet_r.jpeg') }}" alt="area_goumet" class="radio-img">
@@ -104,22 +104,22 @@
                             <img src="{{ url_for('static', filename='imagens/img_hometheater_r.jpeg') }}" alt="hometheater" class="radio-img">
                         </label>
                         
-                        <input type="checkbox" id="r_quartinhodespejo" name="G05" value="despejo">
+                        <input type="checkbox" id="r_quartinhodespejo" name="G05[]" value="despejo">
                         <label for="r_quartinhodespejo">
                             <img src="{{ url_for('static', filename='imagens/img_quartinhodespejo_r.jpeg') }}" alt="quartinhodespejo" class="radio-img">
                         </label>
 
-                        <input type="checkbox" id="r_escritorio" name="G05" value="escritorio">
+                        <input type="checkbox" id="r_escritorio" name="G05[]" value="escritorio">
                         <label for="r_escritorio">
                             <img src="{{ url_for('static', filename='imagens/img_escritorio_r.jpeg') }}" alt="escritorio" class="radio-img">
                         </label>
 
-                        <input type="checkbox" id="r_academia" name="G05" value="academia">
+                        <input type="checkbox" id="r_academia" name="G05[]" value="academia">
                         <label for="r_academia">
                             <img src="{{ url_for('static', filename='imagens/img_academia_r.jpeg') }}" alt="academia" class="radio-img">
                         </label>
 
-                        <input type="checkbox" id="r_piscina" name="G05" value="piscina">
+                        <input type="checkbox" id="r_piscina" name="G05[]" value="piscina">
                         <label for="r_piscina">
                             <img src="{{ url_for('static', filename='imagens/img_piscina_r.jpeg') }}" alt="piscina" class="radio-img">
                         </label>
