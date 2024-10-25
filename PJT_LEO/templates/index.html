@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>s. marchi|arquitetoss</title>
+    <title>s. marchi|arquitetos</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='main.js') }}"></script>
@@ -17,7 +17,7 @@
     </header>
     <div class="main">
             <img style="width: 100%; margin: 0px;" src="{{ url_for('static', filename='imagens/img_orcamento.jpeg') }}" alt="orcamento" >
-            <button id="orcamento-btn" class="bt_orcamentos">ORÇAMENTO ONLINE</button>
+            <a href="/orcamento"><button id="orcamento-btn" class="bt_orcamentos">ORÇAMENTO ONLINE</button></a>
         <div class="carousel-container">
             <div class="carousel">
                 <img class="carousel-img" src="{{ url_for('static', filename='imagens/img_interno_1.jpeg') }}" alt="carousel_1">

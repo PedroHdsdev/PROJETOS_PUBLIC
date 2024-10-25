@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>ORÇAMENTO ONLINE</title>
+    <title>s. marchi|arquitetos</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='orc_style.css') }}">
     <script src="{{ url_for('static', filename='main.js') }}"></script> 
@@ -17,7 +17,7 @@
     </header>
     <div class="main">
         <form class="form" action="/orcamento" method="POST">
-            <label for="Tipo_casa" style="font-size: 26px; margin: 1px;">"Compartilhe conosco suas necessidades e expectativas para seu novo lar, assim 
+            <label for="title_form" style="font-size: 26px; margin: 1px;">"Compartilhe conosco suas necessidades e expectativas para seu novo lar, assim 
                 podemos personalizar o orçamento conforme suas necessidades."</label><br><br>
             
                 <hr class="divisao_linha">
@@ -32,10 +32,10 @@
                 <label for="r_sobrado">
                     <img src="{{ url_for('static', filename='imagens/img_sobrado_r.jpeg') }}" alt="Sobrado" class="radio-img">
                 </label>
-            </div><br><br>
+            </div><br><br> 
             
             <hr class="divisao_linha">
-            <label for="Tipo_casa" style="font-size: 25px; margin: 5px;">Tamanho dos ambientes ?</label><br><br>
+            <label for="ambientes" style="font-size: 25px; margin: 5px;">Tamanho dos ambientes ?</label><br><br>
                 <div class="radio-group">
                     <input type="radio" id="r_medio" name="G02" value="medio" required>
                     <label for="r_medio">
@@ -54,7 +54,7 @@
                 </div><br><br>
             
             <hr class="divisao_linha">
-            <label for="Tipo_casa" style="font-size: 20px;">Quantidade de quartos/suítes?</label><br><br>
+            <label for="quartos" style="font-size: 20px;">Quantidade de quartos/suítes?</label><br><br>
                 <div class="radio-group">
                     <input type="radio" id="r_tres" name="G03" value="3" required>
                     <label for="r_tres">
@@ -73,7 +73,7 @@
                 </div><br><br>
 
             <hr class="divisao_linha">
-            <label for="Tipo_casa" style="font-size: 20px;">Garagem coberta para quantos carros?</label><br><br>
+            <label for="Garagem" style="font-size: 20px;">Garagem coberta para quantos carros?</label><br><br>
                 <div class="radio-group">
                     <input type="radio" id="r_dois_car" name="G04" value="2" required>
                     <label for="r_dois_car">
@@ -92,9 +92,9 @@
                 </div><br><br>
             
                 <hr class="divisao_linha">
-                <label for="Tipo_casa" style="font-size: 20px;">Marque outros ambientes desejados:</label><br><br>
-                    <div class="radio-group" style="margin-left: 6%;">
-                        <input type="checkbox" id="r_area_goumet" name="G05[]" value="area_goumet" required>
+                <label for="Ambientes_desejados" style="font-size: 20px;">Marque outros ambientes desejados:</label><br><br>
+                    <div class="radio-group" style="margin-left: 10%;">
+                        <input type="checkbox" id="r_area_goumet" name="G05[]" value="area_goumet">
                         <label for="r_area_goumet">
                             <img src="{{ url_for('static', filename='imagens/img_area_goumet_r.jpeg') }}" alt="area_goumet" class="radio-img">
                         </label>
@@ -103,30 +103,30 @@
                         <label for="r_hometheater">
                             <img src="{{ url_for('static', filename='imagens/img_hometheater_r.jpeg') }}" alt="hometheater" class="radio-img">
                         </label>
-    
-                        <input type="checkbox" id="r_quartinhodespejo" name="G05[]" value="despejo">
+                        
+                        <input type="checkbox" id="r_quartinhodespejo" name="G05" value="despejo">
                         <label for="r_quartinhodespejo">
                             <img src="{{ url_for('static', filename='imagens/img_quartinhodespejo_r.jpeg') }}" alt="quartinhodespejo" class="radio-img">
                         </label>
 
-                        <input type="checkbox" id="r_escritorio" name="G05[]" value="escritorio">
+                        <input type="checkbox" id="r_escritorio" name="G05" value="escritorio">
                         <label for="r_escritorio">
                             <img src="{{ url_for('static', filename='imagens/img_escritorio_r.jpeg') }}" alt="escritorio" class="radio-img">
                         </label>
 
-                        <input type="checkbox" id="r_academia" name="G05[]" value="academia">
+                        <input type="checkbox" id="r_academia" name="G05" value="academia">
                         <label for="r_academia">
                             <img src="{{ url_for('static', filename='imagens/img_academia_r.jpeg') }}" alt="academia" class="radio-img">
                         </label>
 
-                        <input type="checkbox" id="r_piscina" name="G05[]" value="piscina">
+                        <input type="checkbox" id="r_piscina" name="G05" value="piscina">
                         <label for="r_piscina">
                             <img src="{{ url_for('static', filename='imagens/img_piscina_r.jpeg') }}" alt="piscina" class="radio-img">
                         </label>
                     </div><br><br>
 
             <hr class="divisao_linha">
-            <input class="bt_consultar" type="submit" value="Consultar"> 
+            <button class="bt_consultar" type="submit">Consultar</button>
         </form>
     </div>
     <div class="rodape">

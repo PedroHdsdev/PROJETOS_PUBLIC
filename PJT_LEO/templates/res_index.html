@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>ORÇAMENTO ONLINE</title>
+    <title>s. marchi|arquitetos</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='orc_style.css') }}">
     <script src="{{ url_for('static', filename='main.js') }}"></script>
@@ -16,10 +16,12 @@
         </a>
     </header>
     <div class="main">
-        <h1>----------h1----------</h1>
-        <h2>----------h2----------</h2>
-        <h3>----------h3----------</h3>
-        <h4>----------h4----------</h4>
+        <h1>AREA DA CASA</h1>
+        <h2>{{ vl_area }}</h2>
+        <h1>VALOR M²</h1>
+        <h2>35.00</h2>
+        <h1>VALOR DO PROJETO</h1>
+        <h2>{{ vl_total }}</h2>
     </div>
     <div class="rodape">
         <div class="rodape_left">

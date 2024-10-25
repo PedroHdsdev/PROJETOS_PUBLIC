@@ -1,54 +1,28 @@
 
-function redirectToOrcamento() {
-    window.location.href = '/orcamento';
-}
+    let currentIndex = 0;
 
-function redirectToIndex() {
-    window.location.href = '/'; 
-}
+    function showImage(index) {
+        const carousel = document.querySelector('.carousel');
+        const images = document.querySelectorAll('.carousel-img');
+        const totalImages = images.length;
 
-// Adiciona eventos de clique aos botões assim que o DOM estiver completamente carregado
-document.addEventListener('DOMContentLoaded', function() {
-    var orcamento_btn = document.getElementById('orcamento-btn');
-    var resutado_btn = document.getElementById('resutado-btn');
+        // Certifique-se de que o índice está no intervalo correto
+        if (index >= totalImages) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalImages - 1;
+        } else {
+            currentIndex = index;
+        }
 
-    if (orcamento_btn) {
-        orcamento_btn.addEventListener('click', redirectToOrcamento);
+        // Mova o carrossel para mostrar a imagem correta
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    if (consultaForm) {
-        consultaForm.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            clearForm();
-        });
-    }
-});
-
-
-let currentIndex = 0;
-
-function showImage(index) {
-    const carousel = document.querySelector('.carousel');
-    const images = document.querySelectorAll('.carousel-img');
-    const totalImages = images.length;
-
-    // Certifique-se de que o índice está no intervalo correto
-    if (index >= totalImages) {
-        currentIndex = 0;
-    } else if (index < 0) {
-        currentIndex = totalImages - 1;
-    } else {
-        currentIndex = index;
+    function nextImage() {
+        showImage(currentIndex + 1);
     }
 
-    // Mova o carrossel para mostrar a imagem correta
-    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-function nextImage() {
-    showImage(currentIndex + 1);
-}
-
-function prevImage() {
-    showImage(currentIndex - 1);
-}
+    function prevImage() {
+        showImage(currentIndex - 1);
+    }
