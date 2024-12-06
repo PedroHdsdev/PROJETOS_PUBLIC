@@ -1,0 +1,93 @@
+postgres
+
+    class usuario(models.Model):
+        usu_cod     = models.AutoField(primary_key = True)
+        usu_nome    = models.TextField(max_length=50)
+        usu_senha   = models.TextField(max_length=30)
+        grupo_acesso = models.ForeignKey(
+            GrupoAcesso,
+            on_delete=models.CASCADE,
+            related_name="usuarios"   
+        )
+
+        def __str__(self):
+            return self.usu_nome
+
+
+    class GrupoAcesso(models.Model):
+        gru_cod        = models.AutoField(primary_key = True)
+        gru_nome       = models.TextField(max_length=50)
+        gru_nivel      = models.TextField(max_length=30)
+        gru_subnivel   = models.IntegerField()
+
+        def __str__(self):
+            return self.gru_nome
+
+
+    class sol_gru(models.Model):
+        sg_cod        = models.AutoField(primary_key = True)
+        solucao       = models.ForeignKey(
+            solucao, 
+            on_delete=models.CASCADE, 
+            related_name="GrupoAcesso"
+        )
+        grupo_acesso = models.ForeignKey(
+            GrupoAcesso,
+            on_delete=models.CASCADE,
+            related_name="solucao"   
+        )
+        
+        def __str__(self):
+            return self.emp_nome
+https://github.com/PedroHdsdev/GDE
+
+
+
+select*from app_empresa
+
+in
+
+SELECT*FROM app_solucao
+
+SELECT*from app_usuario
+
+SELECT*from app_grupoacesso
+
+SELECT*from auth_user
+
+ALTER TABLE auth_user ADD COLUMN  emp_cod INTEGER;
+
+ALTER TABLE auth_user 
+ADD CONSTRAINT fk_empresa
+FOREIGN KEY (emp_cod) REFERENCES app_empresa (emp_cod)
+ON DELETE CASCADE;
+
+
+SELECT * 
+from app_empresa as e
+INNER join app_emp_sol as s
+on e.emp_cod = s.empresa_id
+INNER join app_solucao as ss
+on s.solucao_id = ss.sol_cod
+
+-- Inserindo dados na tabela empresa
+INSERT INTO app_empresa(emp_cod, emp_nome)
+VALUES 
+    (1, 'Empresa A'),
+    (2, 'Empresa B'),
+    (3, 'Empresa C');
+
+-- Inserindo dados na tabela solucao
+INSERT INTO app_solucao (sol_cod, sol_nome)
+VALUES 
+    (1, 'Solução X'),
+    (2, 'Solução Y');
+
+-- Inserindo dados na tabela emp_sol
+INSERT INTO app_emp_sol (es_cod, empresa_id, solucao_id)
+VALUES 
+    (1, 1, 1), -- Empresa A usa Solução X
+    (2, 1, 2), -- Empresa A usa Solução Y
+    (3, 2, 1), -- Empresa B usa Solução X
+    (4, 2, 2), -- Empresa B usa Solução Y
+    (5, 3, 1); -- Empresa C usa Solução X
